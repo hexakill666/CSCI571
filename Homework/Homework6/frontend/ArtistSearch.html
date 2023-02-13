@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artist Search</title>
+    <link rel="stylesheet" href="ArtistSearch.css">
+</head>
+<body>
+    <div class="header">
+        Artist Search
+    </div>
+    <div class="main">
+        <div class="search_all">
+            <div class="search_bar_section">
+                <form class="search_bar">
+                    <input class="search_glass" type="image" 
+                    src="image/search_icon.png">
+                    <input class="search_input" type="text" required="required"
+                    placeholder="Please enter an artist name.">
+                    <img class="search_clear" src="image/clear_icon.png"
+                    alt="" onclick="searchClear()">
+                </form>
+            </div>
+            <div class="search_result_list_section">
+                <!-- <div class="search_result_loading"></div>
+                <div class="search_result_none">No results found.</div>
+                <div class="search_result_list">
+                    <div class="item">
+                        <div class="thumbnail_frame">
+                            <div class="thumbnail"></div>
+                        </div>
+                        <div class="title"></div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="search_detail_section">
+                <!-- <div class="search_detail_loading"></div>
+                <div class="detail">
+                    <h1 class="title"></h1>
+                    <h3 class="nationality"></h3>
+                    <p class="biography"></p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a class="footer_a" href="https://www.artsy.net">
+            Power by
+            <img class="footer_img" src="image/artsy_logo.svg" alt="">
+            Arsty
+        </a>
+    </div>
+</body>
+</html>
+<script src="ArtistSearch.js"></script>

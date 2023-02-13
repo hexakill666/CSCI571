@@ -1,0 +1,11 @@
+runtime: nodejs16
+service: hw8frontend
+handlers:
+    # Serve all static files with urls ending with a file extension
+    - url: /(.*\..+)$
+      static_files: dist/artist-search/\1
+      upload: dist/artist-search/(.*\..+)$
+      # catch all handler to index.html
+    - url: /.*
+      static_files: dist/artist-search/index.html
+      upload: dist/artist-search/index.html

@@ -1,0 +1,180 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    margin: auto;
+    width: 1600px;
+    background-color: white;
+}
+
+.container .banner{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.container .banner .menu_title{
+    height: 100%;
+    width: 50%;
+}
+
+.container .banner .menu_title .title{
+    margin: 40px 0px 35px 200px;
+    font-weight: bold;
+}
+
+.container .banner .menu_links{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container .banner .menu_links .links_li_last{
+    margin: 0 80px
+}
+
+.container .banner .menu_links .links_a{
+    margin: 20px;
+    color: silver;
+}
+
+.container .banner .menu_links .links_a:hover{
+    font-weight: bold;
+    color: black;
+}
+
+.container .lawyer{
+    height: 853px;
+    background: url(lawyer.jpg) center center
+}
+
+.container .lawyer .login_form{
+    height: 60%;
+    width: 400px;
+    background-color: midnightblue;
+    position: relative;
+    left: 200px;
+    top: 170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .lawyer .login_form .form_content{
+    height: 70%;
+    width: 80%;
+}
+
+.container .lawyer .login_form .form_content .form_title1{
+    color: white;
+    margin: 0;
+}
+
+.container .lawyer .login_form .form_content .form_title2{
+    color: white;
+    margin: 0;
+    font-size: 2.3em;
+}
+
+.container .lawyer .login_form .form_content .form_title3{
+    color: white;
+    margin: 0;
+    font-size: 2.3em;
+}
+
+.container .lawyer .login_form .form_content .form_title4{
+    color: yellow;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.container .lawyer .login_form .form_content .form_input{
+    height: 40px;
+    width: 300px;
+    margin: 15px 0;
+    border: 0;
+    padding: 1px 0px 1px 10px;
+    font-weight: bold;
+    background-color: lightblue;
+}
+
+.container .lawyer .login_form .form_content .form_submit{
+    height: 40px;
+    width: 150px;
+    margin: 10px 0;
+    border: 0;
+    background-color: darkorange;
+    font-weight: bold;
+}
+
+.container .feature{
+    height: 450px;
+}
+
+.container .feature .all_feature{
+    height: 60%;
+    width: 80%;
+    position: relative;
+    left: 200px;
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container .feature .all_feature .feature1{
+    height: 100%;
+    width: 33.33%;
+}
+
+.container .feature .all_feature .feature1 .feature1_content{
+    padding: 0 10px 0 0;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: grey;
+}
+
+.container .feature .all_feature .feature2{
+    height: 100%;
+    width: 33.33%;
+}
+
+.container .feature .all_feature .feature2 .feature2_content{
+    padding: 0 10px 0 0;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: grey;
+}
+
+.container .feature .all_feature .feature3{
+    height: 100%;
+    width: 33.33%;
+}
+
+.container .feature .all_feature .feature3 .feature3_content{
+    padding: 0 10px 0 0;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: grey;
+}
+
+.container .footer{
+    height: 100px;
+    background-color: whitesmoke;
+}

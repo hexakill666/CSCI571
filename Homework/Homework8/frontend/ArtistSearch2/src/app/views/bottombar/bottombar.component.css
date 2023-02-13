@@ -1,0 +1,22 @@
+.footer{
+    height: 50px;
+    background-color: black;
+    text-align: center;
+}
+
+.footer .footer_a{
+    color: white;
+    font-size: 16px;
+}
+
+.footer .footer_a::before{
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer .footer_a .footer_img{
+    height: 16px;
+    width: 16px;
+}

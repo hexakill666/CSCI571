@@ -1,0 +1,151 @@
+<div class="search_bar_section">
+    <form class="search_bar">
+        <input type="text" name="searchInputValue" class="search_input form-control"
+        placeholder="Please enter an artist name."
+        [(ngModel)]="searchInputValue">
+        <div class="search_button">
+            <button class="search_submit btn btn-primary" type="submit"
+            (click)="search()" [disabled]="searchInputValue == ''">
+                Search
+                <span class="search_loading spinner-border spinner-border-sm" 
+                role="status" aria-hidden="true" *ngIf="isResultListLoading">
+                </span>
+            </button>
+            <button class="search_clear btn btn-secondary" (click)="clearAll()">
+                Clear
+            </button>
+        </div>
+    </form>
+</div>
+<div class="search_result_list_section">
+    <div class="search_none alert alert-danger" role="alert"
+    *ngIf="isResultListNone">
+        No results.
+    </div>
+    <div id="search_result_list_control" class="carousel slide" data-bs-ride="false"
+    *ngIf="isResultListDone">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#search_result_list_control" 
+            *ngFor="let item of resultList; index as idx;" [attr.data-bs-slide-to]="idx"
+            [class]="idx == 0 ? 'active' : ''">
+            </button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let item of resultList; index as idx;"
+            [class]="idx == 0 ? 'active' : ''" (click)="searchDetail(item, $event)">
+                <img [src]="item.thumbnailUrl" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>
+                        {{item.title}}
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#search_result_list_control" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#search_result_list_control" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<div class="search_detail_section">
+    <span class="detail_loading spinner-border" role="status" aria-hidden="true"
+    *ngIf="isArtistInfoLoading || isArtWorksLoading">
+    </span>
+    <div class="detail" *ngIf="isArtistDetailDone">
+        <ul class="detail_nav nav nav-pills nav-fill">
+            <li class="nav-item">
+                <span class="nav-link" href="" [class]="isArtistInfoActive"
+                (click)="isArtistInfoActive = 'active'; isArtWorksActive = ''">
+                    Artist Info
+                </span>
+            </li>
+            <li class="nav-item">
+                <span class="nav-link" href="" [class]="isArtWorksActive"
+                (click)="isArtistInfoActive = ''; isArtWorksActive = 'active'">
+                    ArtWorks
+                </span>
+            </li>
+        </ul>
+        <div class="detail_content">
+            <div class="detail_none alert alert-danger" role="alert"
+            *ngIf="isArtWorksActive == 'active' && isArtWorksNone">
+                No artworks.
+            </div>
+            <div class="authinfo" *ngIf="isArtistInfoActive == 'active'">
+                <h2 class="title">
+                    {{artistInfoJson.name}} ({{artistInfoJson.birthday}} - {{artistInfoJson.deathday}})
+                </h2>
+                <h3 class="nationality">
+                    {{artistInfoJson.nationality}}
+                </h3>
+                <p class="biography">
+                    {{artistInfoJson.biography}}
+                </p>
+            </div>
+            <div class="artworks" *ngIf="isArtWorksActive == 'active' && !isArtWorksNone">
+                <div class="card" *ngFor="let item of artWorksList;">
+                    <div class="thumbnail"
+                    [style.background]="item.background">
+                    </div>
+                    <div class="title">
+                        {{item.title}}
+                    </div>
+                    <div class="date">
+                        {{item.date}}
+                    </div>
+                    <button class="category btn btn-primary" type="button"
+                    data-bs-toggle="modal" data-bs-target="#categoryAll"
+                    (click)="searchCategory(item, $event)">
+                        Categories
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="categoryAll">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="artwork">
+                    <img class="thumbnail" [src]="lastClickedArtwork.thumbnailUrl" alt="">
+                    <div class="intro">
+                        <h5 class="title">
+                            {{lastClickedArtwork.title}}
+                        </h5>
+                        <h5 class="date">
+                            {{lastClickedArtwork.date}}
+                        </h5>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span class="category_loading spinner-border" 
+                role="status" aria-hidden="true"
+                *ngIf="isCategoryLoading">
+                </span>
+                <div class="category_none alert alert-danger" role="alert"
+                *ngIf="isCategoryNone">
+                    No categories.
+                </div>
+                <ng-container *ngIf="isCategoryDone">
+                    <div class="card" *ngFor="let item of categoryList;">
+                        <div class="category_thumbnail"
+                        [style.background]="item.background">
+                        </div>
+                        <div class="category_name">
+                            {{item.name}}
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

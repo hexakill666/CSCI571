@@ -1,0 +1,9 @@
+runtime: python39
+service: hw6frontend
+handlers:
+  - url: /(.*\..+)$
+    static_files: \1
+    upload: (.*\..+)$
+  - url: /.*
+    static_files: ArtistSearch.html
+    upload: ArtistSearch.html

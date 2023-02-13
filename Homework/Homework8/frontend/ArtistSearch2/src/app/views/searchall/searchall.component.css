@@ -1,0 +1,216 @@
+.search_bar_section{
+    height: 150px;
+}
+
+.search_bar_section .search_bar{
+    width: 90%;
+    height: 60%;
+    position: relative;
+    top: 20%;
+    margin: auto;
+}
+
+.search_bar_section .search_bar .search_button{
+    width: 166px;
+    margin: 10px auto;
+}
+
+.search_bar_section .search_bar .search_submit{
+    margin: 0 5px;
+    background-color: #205375;
+}
+
+.search_result_list_section{
+    height: 393px;
+}
+
+.search_result_list_section .search_none{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#search_result_list_control{
+    width: 393px;
+    height: 393px;
+    margin: 0 auto;
+}
+
+.search_detail_section{
+    height: 600px;
+}
+
+.search_detail_section .detail_loading{
+    display: block;
+    width: 2.5em;
+    height: 2.5em;
+    position: relative;
+    top: 5%;
+    margin: 0 auto;
+    color: #205375;
+}
+
+.search_detail_section .detail{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.search_detail_section .detail .detail_nav{
+    width: 100%;
+    height: 6.5%;
+}
+
+.search_detail_section .detail .detail_nav .nav-item .nav-link.active{
+    background-color: #205375;
+}
+
+.search_detail_section .detail .detail_content{
+    width: 100%;
+    height: 93.5%;
+    overflow-y: auto;
+}
+
+.search_detail_section .detail .detail_content .authinfo{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.search_detail_section .detail .detail_content .authinfo .biography{
+    text-align: justify;
+}
+
+.search_detail_section .detail .detail_content .artworks{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.search_detail_section .detail .detail_content .artworks .card{
+    width: 250px;
+    height: 360px;
+    display: inline-block;
+}
+
+.search_detail_section .detail .detail_content .artworks .card .thumbnail{
+    width: 100%;
+    height: 260px;
+}
+
+.search_detail_section .detail .detail_content .artworks .card .title{
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.search_detail_section .detail .detail_content .artworks .card .date{
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.search_detail_section .detail .detail_content .artworks .card .category{
+    width: 90%;
+    margin: 0 5%;
+    background-color: #205375;
+}
+
+#categoryAll .modal-dialog{
+    margin: 0;
+    position: relative;
+    top: 5%;
+    left: 20%;
+}
+
+#categoryAll .modal-content{
+    width: 1200px;
+}
+
+#categoryAll .modal-header .artwork .thumbnail{
+    max-width: 100px;
+    max-height: 100px;
+    display: inline-block;
+}
+
+#categoryAll .modal-header .artwork .intro{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#categoryAll .modal-body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#categoryAll .modal-body .category_loading{
+    width: 2.5em;
+    height: 2.5em;
+    color: #205375;
+}
+
+#categoryAll .modal-body .category_none{
+    width: 100%;
+    text-align: center;
+}
+
+#categoryAll .modal-body .card{
+    width: 250px;
+    height: 400px;
+    display: inline-block;
+}
+
+#categoryAll .modal-body .card .category_thumbnail{
+    width: 100%;
+    height: 350px;
+}
+
+#categoryAll .modal-body .card .category_name{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 400px) {
+    .search_result_list_section .search_result_list{
+        width: 100%;
+    }
+
+    .search_detail_section .detail{
+        width: 100%;
+    }
+
+    #search_result_list_control .carousel-inner .carousel-item .carousel-caption{
+        display: block!important;
+    }
+
+    #categoryAll .modal-header .artwork .intro{
+        width: 235px;
+    }
+
+    #categoryAll .modal-header .artwork .intro .title{
+        font-size: 1rem;
+    }
+
+    #categoryAll .modal-header .artwork .intro .date{
+        font-size: 1rem;
+    }
+
+    #categoryAll .modal-dialog{
+        left: 0;
+    }
+
+    #categoryAll .modal-content{
+        width: auto;
+    }
+}
